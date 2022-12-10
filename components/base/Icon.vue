@@ -4,7 +4,13 @@
 </template>
 
 <script setup>
+// Solid
 import StarSolidSvg from '@/assets/icons/solid/star.svg?raw'
+
+// Outline
+import ChebronRightOutlineSvg from '@/assets/icons/outline/chevron-right.svg?raw'
+import ChebronLeftOutlineSvg from '@/assets/icons/outline/chevron-left.svg?raw'
+import HeartOutlineSvg from '@/assets/icons/outline/heart.svg?raw'
 
 const props = defineProps({
   category: { type: String, default: 'solid' },
@@ -12,6 +18,11 @@ const props = defineProps({
 })
 
 const items = {
+  outline: {
+    'chevron-right': ChebronRightOutlineSvg,
+    'chevron-left': ChebronLeftOutlineSvg,
+    heart: HeartOutlineSvg
+  },
   solid: {
     star: StarSolidSvg
   }
