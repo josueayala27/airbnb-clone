@@ -7,7 +7,7 @@
 
         <!-- Navigation -->
         <div class="flex-1">
-          Holi!
+          <!-- Holi! -->
         </div>
 
         <!-- Actions -->
