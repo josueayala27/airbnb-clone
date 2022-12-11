@@ -52,10 +52,8 @@
 
 <script lang="ts" setup>
 import { set, get } from '@vueuse/core'
-import gsap from 'gsap'
-import * as ScrollToPlugin from 'gsap/ScrollToPlugin'
 
-gsap.registerPlugin(ScrollToPlugin)
+const { $gsap } = useNuxtApp()
 
 const props = defineProps<{
   title: string,
@@ -83,7 +81,7 @@ const goTo = (action: string) => {
     set(currentIndex, get(currentIndex) - 1)
   }
 
-  gsap.to(get(container), { ease: 'power2.out', scrollTo: get(itemRefs)[get(currentIndex)] })
+  $gsap.to(get(container), { ease: 'power2.out', scrollTo: get(itemRefs)[get(currentIndex)] })
 }
 
 let observer: IntersectionObserver
