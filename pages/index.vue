@@ -39,4 +39,9 @@ const homeItems = ref<_AsyncData<Card[], Error | null>>()
 
 set(homeItems, await useAsyncData('home', () => $fetch('/api/hello')))
 
+// Page metadata
+definePageMeta({
+  key: 'home',
+  keepalive: true
+})
 </script>

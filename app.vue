@@ -3,7 +3,7 @@
     <nav class="bg-white border-b">
       <div class="container mx-auto flex items-center">
         <!-- Logo -->
-        <div class="w-[30%] h-[80px] flex items-center" v-html="fullLogo" />
+        <div class="w-[30%] h-[80px] flex items-center" @click="navigateTo('/')" v-html="fullLogo" />
 
         <!-- Navigation -->
         <div class="flex-1">
@@ -12,7 +12,7 @@
 
         <!-- Actions -->
         <div class="w-[30%] flex items-center justify-end">
-          <button class="p-3 hover:bg-gray-100 rounded-full text-sm font-medium">
+          <button class="p-3 hover:bg-gray-100 rounded-full text-sm font-medium" @click="navigateTo('/host')">
             Modo anfitrión
           </button>
           <button class="p-3 rounded-full hover:bg-gray-100 items-center">
