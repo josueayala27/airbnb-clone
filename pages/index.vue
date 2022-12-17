@@ -2,9 +2,7 @@
   <section />
 
   <!-- Filters section -->
-  <section class="top-[81px] sticky z-50 bg-white">
-    <HomeFilter />
-  </section>
+  <HomeFilter />
 
   <!-- Grid section -->
   <section
@@ -24,7 +22,10 @@ import { _AsyncData } from 'nuxt/dist/app/composables/asyncData'
 
 const homeItems = ref<_AsyncData<any[], Error | null>>()
 
-set(homeItems, await useAsyncData('home', () => $fetch('/api/hello')))
+set(homeItems, await useAsyncData('home', () => {
+  console.log('Aquí se hace una api call.')
+  return $fetch('/api/hello')
+}))
 
 // Page metadata
 definePageMeta({
