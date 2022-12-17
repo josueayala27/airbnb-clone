@@ -31,7 +31,7 @@
     <div class="flex justify-between mt-3 items-start select-none">
       <div>
         <p class="font-semibold">
-          {{ props.title }}
+          {{ title }}
         </p>
         <p class="text-gray-500">
           Con vista a la bahía
@@ -102,9 +102,3 @@ onBeforeUnmount(() => {
   observer.disconnect()
 })
 </script>
-
-<style>
-.scroll__none::-webkit-scrollbar {
-  height: 0px;
-}
-</style>

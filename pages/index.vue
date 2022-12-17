@@ -1,7 +1,14 @@
 <template>
   <section />
+
+  <!-- Filters section -->
+  <section class="top-[81px] sticky z-50 bg-white">
+    <HomeFilter />
+  </section>
+
+  <!-- Grid section -->
   <section
-    class="container px-[24px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[24px]"
+    class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[24px] mt-6"
   >
     <HomeCard
       v-for="(item, i) in homeItems?.data"
@@ -15,33 +22,13 @@
 import { set } from '@vueuse/core'
 import { _AsyncData } from 'nuxt/dist/app/composables/asyncData'
 
-interface Description {
-  type: string;
-  value: number;
-}
-
-interface Availability {
-  start: string;
-  end: string;
-}
-
-interface Card {
-  id: string;
-  hosting_name: string;
-  description: Description;
-  rate: number;
-  currency: string;
-  availability: Availability;
-  images: string[];
-}
-
-const homeItems = ref<_AsyncData<Card[], Error | null>>()
+const homeItems = ref<_AsyncData<any[], Error | null>>()
 
 set(homeItems, await useAsyncData('home', () => $fetch('/api/hello')))
 
 // Page metadata
 definePageMeta({
-  key: 'home',
-  keepalive: true
+  key: 'home'
+  // keepalive: true
 })
 </script>
