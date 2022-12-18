@@ -2,6 +2,7 @@ node_modules
 *.log*
 .nuxt
 .nitro
+.vercel
 .cache
 .output
 .env

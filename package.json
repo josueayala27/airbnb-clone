@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "build-vercel": "NITRO_PRESET=vercel-edge nuxt build",
+    "build-vercel": "__VUE_I18N_FULL_INSTALL__=true __VUE_I18N_LEGACY_API__=true __INTLIFY_PROD_DEVTOOLS__=false NITRO_PRESET=vercel-edge nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
