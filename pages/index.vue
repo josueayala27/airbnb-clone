@@ -4,6 +4,8 @@
 
   <!-- Grid section -->
   <Home />
+  <Home />
+  <Home />
 </template>
 
 <script lang="ts" setup>
