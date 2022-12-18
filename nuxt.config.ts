@@ -1,7 +1,7 @@
-// import { resolve, dirname } from 'node:path'
-// import { fileURLToPath } from 'url'
+import { resolve, dirname } from 'node:path'
+import { fileURLToPath } from 'url'
 import svgLoader from 'vite-svg-loader'
-// import VueI18nVitePlugin from '@intlify/unplugin-vue-i18n/vite'
+import VueI18nVitePlugin from '@intlify/unplugin-vue-i18n/vite'
 import en from './locales/en.json'
 
 export default defineNuxtConfig({
@@ -14,17 +14,17 @@ export default defineNuxtConfig({
       __INTLIFY_PROD_DEVTOOLS__: false
     },
     plugins: [
-      svgLoader()
-      // VueI18nVitePlugin({
-      //   include: [
-      //     resolve(dirname(fileURLToPath(import.meta.url)), './locales/*.json')
-      //   ]
-      // })
+      svgLoader(),
+      VueI18nVitePlugin({
+        include: [
+          resolve(dirname(fileURLToPath(import.meta.url)), './locales/*.json')
+        ]
+      })
     ]
   },
   build: { transpile: ['gsap'] },
   i18n: {
     defaultLocale: 'en',
-    vueI18n: { legacy: true, messages: { en } }
+    vueI18n: { legacy: false, messages: { en } }
   }
 })
