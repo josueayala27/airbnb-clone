@@ -21,7 +21,10 @@
   },
   "dependencies": {
     "@vueuse/core": "^9.6.0",
+    "add": "^2.0.6",
     "dayjs": "^1.11.7",
-    "gsap": "^3.11.3"
+    "gsap": "^3.11.3",
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "yarn": "^1.22.19"
   }
 }

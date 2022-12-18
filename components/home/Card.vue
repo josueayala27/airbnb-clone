@@ -3,7 +3,7 @@
     <div class="relative">
       <div
         ref="container"
-        class="aspect-[20/19] rounded-2xl snap-mandatory snap-x flex overflow-auto scroll__none"
+        class="aspect-[20/19] rounded-2xl snap-mandatory snap-x flex overflow-auto scrollbar-hide"
       >
         <div
           v-for="(image, i) in images"

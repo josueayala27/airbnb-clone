@@ -1,6 +1,6 @@
 <template>
   <section class="top-[81px] sticky z-50 bg-white">
-    <div class="container mx-auto flex gap-8 scroll__none overflow-auto">
+    <div class="container mx-auto flex gap-8 scrollbar-hide overflow-auto">
       <HomeFilterItem id="filter-item" title="Piscinas increíbles" image="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg" />
       <HomeFilterItem id="filter-item" title="Cabañas" image="https://a0.muscache.com/pictures/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg" />
       <HomeFilterItem id="filter-item" title="Casas rurales" image="https://a0.muscache.com/pictures/6ad4bd95-f086-437d-97e3-14d12155ddfe.jpg" />
