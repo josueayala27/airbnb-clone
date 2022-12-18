@@ -8,6 +8,9 @@ export default defineNuxtConfig({
   css: ['@/assets/css/main.css'],
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
   vite: {
+    define: {
+      __INTLIFY_PROD_DEVTOOLS__: false
+    },
     plugins: [
       svgLoader(),
       VueI18nVitePlugin({
