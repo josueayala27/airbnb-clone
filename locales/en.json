@@ -1,0 +1,13 @@
+{
+  "homeCard": {
+    "description": {
+      "distance": "{distance} kilometers away",
+      "nearbyPlaces": "Near {location}",
+      "popular": "Viewed {count} times last week",
+      "recent": "Added {weeks} weeks ago"
+    }
+  },
+  "general": {
+    "night": "Night"
+  }
+}

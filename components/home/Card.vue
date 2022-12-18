@@ -1,28 +1,44 @@
 <template>
   <div class="text-base group cursor-pointer">
     <div class="relative">
-      <div ref="container" class="aspect-[20/19] rounded-2xl snap-mandatory snap-x flex overflow-auto scroll__none">
+      <div
+        ref="container"
+        class="aspect-[20/19] rounded-2xl snap-mandatory snap-x flex overflow-auto scroll__none"
+      >
         <div
           v-for="(image, i) in images"
           :ref="el => itemRefs.push(el)"
           :key="i"
           class="h-full w-full snap-start flex-shrink-0 bg-gray-200"
         >
-          <!-- <img class="w-full h-full object-cover" loading="lazy" :src="image"> -->
-          <nuxt-img loading="lazy" class="h-full w-full" fit="cover" :src="image" />
+          <img loading="lazy" class="h-full w-full object-cover" :src="image">
         </div>
       </div>
 
       <div class="absolute top-0 right-0 md:left-0 md:h-full md:w-full p-3 grid md:grid-rows-3">
         <div class="flex justify-end">
-          <BaseIcon name="heart" category="outline" class="h-[24px] text-white fill-black/40 aspect-square" />
+          <BaseIcon
+            name="heart"
+            category="outline"
+            class="h-[24px] text-white fill-black/40 aspect-square"
+          />
         </div>
 
-        <div class="justify-between items-center opacity-0 group-hover:opacity-100 duration-150 hidden md:flex">
-          <div class="p-2 bg-white/80 hover:bg-white hover:scale-105 active:scale-100 duration-200 rounded-full" @click="goTo('back')">
+        <div
+          class="justify-between items-center opacity-0 group-hover:opacity-100 duration-150 hidden md:flex"
+        >
+          <!-- :class="[{ 'invisible': currentIndex <= 0 }]" -->
+          <div
+            class="p-2 bg-white/80 hover:bg-white hover:scale-105 active:scale-100 duration-200 rounded-full"
+            @click="goTo('back')"
+          >
             <BaseIcon name="chevron-left" category="outline" class="h-[20px] aspect-square" />
           </div>
-          <div class="p-2 bg-white/80 hover:bg-white hover:scale-105 active:scale-100 duration-200 rounded-full" @click="goTo('next')">
+          <!-- :class="[{ 'invisible': currentIndex >= images.length - 1 }]" -->
+          <div
+            class="p-2 bg-white/80 hover:bg-white hover:scale-105 active:scale-100 duration-200 rounded-full"
+            @click="goTo('next')"
+          >
             <BaseIcon name="chevron-right" category="outline" class="h-[20px] aspect-square" />
           </div>
         </div>
@@ -30,21 +46,27 @@
     </div>
     <div class="flex justify-between mt-3 items-start select-none">
       <div>
-        <p class="font-semibold">
+        <p class="font-medium">
           {{ title }}
         </p>
         <p class="text-gray-500">
-          Con vista a la bahía
+          {{ $t(`homeCard.description.${type}`, { ...meta }) }}
         </p>
         <p class="text-gray-500">
-          19 – 24 de ene
+          {{
+            $dayjs(availability.start).format('MMM D') }} &#8211; {{
+            $dayjs(availability.end).format('MMM D')
+          }}
         </p>
-        <p>$286 USD <span class="text-gray-500">noche</span> </p>
+        <p>
+          ${{ price }} USD <span class="text-gray-500">{{ $t('general.night').toLocaleLowerCase()
+          }}</span>
+        </p>
       </div>
 
       <div class="flex gap-2 items-center">
         <BaseIcon name="star" category="solid" class="h-[15px] aspect-square" />
-        4.93
+        {{ rate }}
       </div>
     </div>
   </div>
@@ -52,26 +74,33 @@
 
 <script lang="ts" setup>
 import { set, get } from '@vueuse/core'
+import { DescType } from '@/enums/home-card.enum'
 
 const { $gsap } = useNuxtApp()
 
 const props = defineProps<{
   title: string,
-  images: Array<string>
+  images: Array<string>,
+  rate: number | string,
+  type: DescType,
+  meta: any,
+  availability: { start: string | Date, end: string | Date },
+  price: number
 }>()
 
 const currentIndex = ref(0)
-
 const container = ref()
-const itemRefs = ref <Element[]>([])
+const itemRefs = ref<Element[] | any>([])
 
 const preloadImage = () => {
+  if (get(currentIndex) + 1 > props.images.length - 1) { return }
+
   // Load n + 1 image
   const image: HTMLImageElement = new Image()
   image.src = props.images[get(currentIndex) + 1]
 }
 
-const goTo = (action: string) => {
+const goTo = (action: 'next' | 'back') => {
   if (action.includes('next')) {
     if (get(currentIndex) >= props.images.length - 1) { return }
     set(currentIndex, get(currentIndex) + 1)

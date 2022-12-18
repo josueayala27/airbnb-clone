@@ -11,8 +11,8 @@
     "lintfix": "eslint --fix"
   },
   "devDependencies": {
-    "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/i18n": "^8.0.0-beta.7",
     "@nuxtjs/tailwindcss": "^6.1.3",
     "eslint": "^8.29.0",
     "nuxt": "3.0.0",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^9.6.0",
+    "dayjs": "^1.11.7",
     "gsap": "^3.11.3"
   }
 }
