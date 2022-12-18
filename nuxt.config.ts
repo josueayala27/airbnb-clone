@@ -9,7 +9,9 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
   vite: {
     define: {
-      __INTLIFY_PROD_DEVTOOLS__: true
+      __VUE_I18N_FULL_INSTALL__: true,
+      __VUE_I18N_LEGACY_API__: true,
+      __INTLIFY_PROD_DEVTOOLS__: false
     },
     plugins: [
       svgLoader()
@@ -23,6 +25,6 @@ export default defineNuxtConfig({
   build: { transpile: ['gsap'] },
   i18n: {
     defaultLocale: 'en',
-    vueI18n: { messages: { en } }
+    vueI18n: { legacy: true, messages: { en } }
   }
 })
