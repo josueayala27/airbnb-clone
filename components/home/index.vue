@@ -51,6 +51,7 @@
       }"
     />
 
+    <!-- Nearby places card -->
     <HomeCard
       v-bind="{
         availability: { start: '12/22/2022', end: '12/27/2022' },
