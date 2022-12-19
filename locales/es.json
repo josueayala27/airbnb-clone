@@ -1,6 +1,10 @@
 {
   "general": {
     "filters": "Filtros",
+    "name": "Name",
+    "nested": {
+      "joscode": "Hey! i'm Josué Ayala"
+    },
     "night": "Noche"
   },
   "homeCard": {

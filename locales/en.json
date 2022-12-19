@@ -9,10 +9,31 @@
   },
   "general": {
     "night": "Night",
-    "filters": "Filters",
-    "name": "Name",
-    "nested": {
-      "joscode": "Hey! i'm Josué Ayala"
-    }
+    "filters": "Filters"
+  },
+  "filters": {
+    "amazingPools": "Amazing pools",
+    "cabins": "Cabins",
+    "ruralHouses": "Rural houses",
+    "tropical": "Tropical",
+    "fun": "Diversión",
+    "sharedHouses": "",
+    "inFrontOfTheBeach": "",
+    "incredibleViews": "",
+    "lakeFront": "",
+    "tinyHouses": "",
+    "popular": "",
+    "impressive": "",
+    "treeHouses": "",
+    "domes": "Cúpulas",
+    "castles": "Castillos",
+    "novelty": "",
+    "nationalParks": "",
+    "mansions": "",
+    "famousCities": "",
+    "isolated": "",
+    "surf": "",
+    "vineyards": "",
+    "bedAndBreakfast": ""
   }
 }
