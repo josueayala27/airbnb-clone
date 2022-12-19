@@ -10,6 +10,9 @@
   "general": {
     "night": "Night",
     "filters": "Filters",
-    "test": "Prueba"
+    "name": "Name",
+    "nested": {
+      "joscode": "Hey! i'm Josué Ayala"
+    }
   }
 }
