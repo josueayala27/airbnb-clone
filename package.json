@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "localazy download && nuxt build",
-    "dev": "nuxt dev",
+    "build": "localazy upload && localazy download && nuxt build",
+    "dev": "localazy download && nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",

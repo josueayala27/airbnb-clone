@@ -9,6 +9,7 @@
   },
   "general": {
     "night": "Night",
-    "filters": "Filters"
+    "filters": "Filters",
+    "test": "Prueba"
   }
 }
