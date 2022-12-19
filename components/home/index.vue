@@ -1,5 +1,5 @@
 <template>
-  <section class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[24px] mt-6">
+  <section class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[24px] px-6 lg:px-0 mt-6">
     <!-- Distance card -->
     <HomeCard
       v-bind="{

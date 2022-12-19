@@ -1,9 +1,9 @@
 <template>
-  <section class="top-[81px] sticky z-50 bg-white">
+  <section class="top-[81px] sticky z-50 bg-white shadow-md">
     <div class="container mx-auto flex gap-6">
       <div class="relative flex-1 overflow-hidden">
-        <div ref="scrollContent" class="scrollbar-hide overflow-hidden flex gap-8 items-center">
-          <HomeFilterItem id="filter-item" title="Piscinas increíbles" image="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg" />
+        <div ref="scrollContent" class="scrollbar-hide overflow-auto lg:overflow-hidden flex gap-8 items-center">
+          <HomeFilterItem id="filter-item" selected class="ml-6 lg:ml-0" title="Piscinas increíbles" image="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg" />
           <HomeFilterItem id="filter-item" title="Cabañas" image="https://a0.muscache.com/pictures/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg" />
           <HomeFilterItem id="filter-item" title="Casas rurales" image="https://a0.muscache.com/pictures/6ad4bd95-f086-437d-97e3-14d12155ddfe.jpg" />
           <HomeFilterItem id="filter-item" title="Tropical" image="https://a0.muscache.com/pictures/ee9e2a40-ffac-4db9-9080-b351efc3cfc4.jpg" />
@@ -25,18 +25,18 @@
           <HomeFilterItem id="filter-item" title="Aislado" image="https://a0.muscache.com/pictures/9a2ca4df-ee90-4063-b15d-0de7e4ce210a.jpg" />
           <HomeFilterItem id="filter-item" title="Surf" image="https://a0.muscache.com/pictures/957f8022-dfd7-426c-99fd-77ed792f6d7a.jpg" />
           <HomeFilterItem id="filter-item" title="Viñedos" image="https://a0.muscache.com/pictures/60ff02ae-d4a2-4d18-a120-0dd274a95925.jpg" />
-          <HomeFilterItem id="filter-item" title="Bed and breakfast" image="https://a0.muscache.com/pictures/5ed8f7c7-2e1f-43a8-9a39-4edfc81a3325.jpg" />
+          <HomeFilterItem id="filter-item" class="mr-6 lg:mr-0" title="Bed and breakfast" image="https://a0.muscache.com/pictures/5ed8f7c7-2e1f-43a8-9a39-4edfc81a3325.jpg" />
         </div>
 
         <!-- Left action button -->
-        <div v-if="!arrivedState.left" class="absolute bg-gradient-to-r from-white via-white to-transparent pr-[3rem] top-0 h-full left-0 flex items-center" @click="goTo('back')">
+        <div v-if="!arrivedState.left" class="absolute bg-gradient-to-r from-white via-white to-transparent pr-[3rem] top-0 h-full left-0 hidden lg:flex items-center" @click="goTo('back')">
           <button class="p-2 text-xs bg-white rounded-full inline-flex border">
             <BaseIcon name="chevron-left" category="outline" class="h-[12px] aspect-square" />
           </button>
         </div>
 
         <!-- Right action button -->
-        <div v-if="!arrivedState.right" class="absolute bg-gradient-to-l from-white via-white to-transparent pl-[3rem] top-0 h-full right-0 flex items-center" @click="goTo('next')">
+        <div v-if="!arrivedState.right" class="absolute bg-gradient-to-l from-white via-white to-transparent pl-[3rem] top-0 h-full right-0 hidden lg:flex items-center" @click="goTo('next')">
           <button class="p-2 text-xs bg-white rounded-full inline-flex border">
             <BaseIcon name="chevron-right" category="outline" class="h-[12px] aspect-square" />
           </button>
@@ -44,7 +44,7 @@
       </div>
 
       <!-- Actions -->
-      <div class="flex items-center">
+      <div class="lg:flex items-center hidden">
         <button class="text-sm border rounded-xl p-3 flex items-center gap-2">
           <span class="h-[14px] w-[14px]" v-html="adjustmentIcon" />
           {{ $t('general.filters') }}
