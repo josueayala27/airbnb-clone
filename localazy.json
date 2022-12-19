@@ -6,6 +6,7 @@
     "files": "locales/en.json"
   },
   "download": {
-    "files": "locales/${lang}.json"
+    "files": "locales/${lang}.json",
+    "includeSourceLang": true
   }
 }
