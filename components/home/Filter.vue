@@ -2,7 +2,7 @@
   <section class="top-[81px] sticky z-50 bg-white">
     <div class="container mx-auto flex gap-6">
       <div class="relative flex-1 overflow-hidden">
-        <div ref="scrollContent" class="scrollbar-hide overflow-x-auto flex gap-8 items-center">
+        <div ref="scrollContent" class="scrollbar-hide overflow-hidden flex gap-8 items-center">
           <HomeFilterItem id="filter-item" title="Piscinas increíbles" image="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg" />
           <HomeFilterItem id="filter-item" title="Cabañas" image="https://a0.muscache.com/pictures/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg" />
           <HomeFilterItem id="filter-item" title="Casas rurales" image="https://a0.muscache.com/pictures/6ad4bd95-f086-437d-97e3-14d12155ddfe.jpg" />
@@ -55,7 +55,7 @@
 </template>
 
 <script lang="ts" setup>
-import { get, useScroll } from '@vueuse/core'
+import { useRefHistory, get, set, useScroll } from '@vueuse/core'
 import adjustmentIcon from '@/assets/svg/filters/adjustment.svg?raw'
 
 const { $gsap } = useNuxtApp()
@@ -63,20 +63,22 @@ const { $gsap } = useNuxtApp()
 const scrollContent = ref()
 const { arrivedState } = useScroll(scrollContent, { behavior: 'smooth' })
 
+const currentValue = ref(0)
+const { undo } = useRefHistory(currentValue)
+
 const goTo = (direction: 'next' | 'back') => {
   const items = Array.from(document.querySelectorAll("[id='filter-item']"))
 
   const totalShowed = items.filter(el => el.ariaHidden === 'false').length - 2
   const firstItem = items.findIndex(el => el.ariaHidden === 'false')
 
+  set(currentValue, totalShowed + firstItem)
   if (direction.includes('next')) {
-    $gsap.to(get(scrollContent), { ease: 'power2.out', scrollTo: items[totalShowed + firstItem] })
+    $gsap.to(get(scrollContent), { ease: 'power2.out', scrollTo: items[get(currentValue)] })
     return
   }
 
-  console.log(firstItem)
-  console.log(totalShowed)
-  console.log(firstItem - totalShowed)
-  $gsap.to(get(scrollContent), { ease: 'power2.out', scrollTo: items[firstItem - totalShowed] })
+  undo()
+  $gsap.to(get(scrollContent), { ease: 'power2.out', scrollTo: items[get(currentValue)] })
 }
 </script>
