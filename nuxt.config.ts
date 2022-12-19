@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url'
 import svgLoader from 'vite-svg-loader'
 import VueI18nVitePlugin from '@intlify/unplugin-vue-i18n/vite'
 import en from './locales/en.json'
+import es from './locales/es.json'
 
 export default defineNuxtConfig({
   css: ['@/assets/css/main.css'],
@@ -19,7 +20,8 @@ export default defineNuxtConfig({
   },
   build: { transpile: ['gsap'] },
   i18n: {
+    locales: ['en', 'es'],
     defaultLocale: 'en',
-    vueI18n: { legacy: false, globalInjection: true, messages: { en } }
+    vueI18n: { legacy: false, globalInjection: true, messages: { en, es } }
   }
 })

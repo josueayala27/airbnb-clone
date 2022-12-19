@@ -1,0 +1,14 @@
+{
+  "general": {
+    "filters": "Filtros",
+    "night": "Noche"
+  },
+  "homeCard": {
+    "description": {
+      "distance": "{distance} kilómetros de distancia",
+      "nearbyPlaces": "Cerca de {location}",
+      "popular": "Visto {count} veces la semana pasada",
+      "recent": "Añadido hace {weeks} semanas"
+    }
+  }
+}
