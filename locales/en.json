@@ -1,4 +1,33 @@
 {
+  "filters": {
+    "amazingPools": "Amazing pools",
+    "bedAndBreakfast": "Bed and breakfast",
+    "cabins": "Cabins",
+    "castles": "Castillos",
+    "domes": "Domes",
+    "famousCities": "Iconic cities",
+    "fun": "Fun",
+    "impressive": "Impresionante",
+    "inFrontOfTheBeach": "Beachfront",
+    "incredibleViews": "Amazing views",
+    "isolated": "Isolated",
+    "lakeFront": "Lakefront",
+    "mansions": "Mansions",
+    "nationalParks": "National parks",
+    "novelty": "New",
+    "popular": "Trending",
+    "ruralHouses": "Rural houses",
+    "sharedHouses": "Shared houses",
+    "surf": "Surf",
+    "tinyHouses": "Tiny homes",
+    "treeHouses": "Treehouses",
+    "tropical": "Tropical",
+    "vineyards": "Vineyards"
+  },
+  "general": {
+    "filters": "Filters",
+    "night": "Night"
+  },
   "homeCard": {
     "description": {
       "distance": "{distance} kilometers away",
@@ -6,34 +35,5 @@
       "popular": "Viewed {count} times last week",
       "recent": "Added {weeks} weeks ago"
     }
-  },
-  "general": {
-    "night": "Night",
-    "filters": "Filters"
-  },
-  "filters": {
-    "amazingPools": "Amazing pools",
-    "cabins": "Cabins",
-    "ruralHouses": "Rural houses",
-    "tropical": "Tropical",
-    "fun": "Diversión",
-    "sharedHouses": "",
-    "inFrontOfTheBeach": "",
-    "incredibleViews": "",
-    "lakeFront": "",
-    "tinyHouses": "",
-    "popular": "",
-    "impressive": "",
-    "treeHouses": "",
-    "domes": "Cúpulas",
-    "castles": "Castillos",
-    "novelty": "",
-    "nationalParks": "",
-    "mansions": "",
-    "famousCities": "",
-    "isolated": "",
-    "surf": "",
-    "vineyards": "",
-    "bedAndBreakfast": ""
   }
 }

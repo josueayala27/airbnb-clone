@@ -40,7 +40,7 @@
         availability: { start: '04/07/2022', end: '04/12/2022' },
         price: 335,
         rate: 4.98,
-        meta: { count: (40570).toLocaleString() },
+        meta: {count: (40570).toLocaleString('en-US') },
         type: DescType.POPULAR,
         title: 'Lac-Beauport, Canada', images: [
           'https://a0.muscache.com/im/pictures/miso/Hosting-46695796/original/6ba850bd-6582-45a5-bce7-5b96dc6f30dd.jpeg?im_w=720',

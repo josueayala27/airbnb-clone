@@ -1,9 +1,34 @@
 {
+  "filters": {
+    "amazingPools": "Piscinas increíbles",
+    "bedAndBreakfast": "Alojamiento y desayuno",
+    "cabins": "Cabañas",
+    "castles": "Castillos",
+    "domes": "Cúpulas",
+    "famousCities": "Ciudades icónicas",
+    "fun": "Diversión",
+    "impressive": "Impresionante",
+    "inFrontOfTheBeach": "A pie de la playa",
+    "incredibleViews": "Vistas increíbles",
+    "isolated": "Remotos",
+    "lakeFront": "Frente al lago",
+    "mansions": "Mansiones",
+    "nationalParks": "Parques nacionales",
+    "novelty": "Nuevo",
+    "popular": "Populares",
+    "ruralHouses": "Casas rurales",
+    "sharedHouses": "Casas compartidas",
+    "surf": "Surf",
+    "tinyHouses": "Casas pequeñas",
+    "treeHouses": "Casas de árbol",
+    "tropical": "Tropical",
+    "vineyards": "Viñedos"
+  },
   "general": {
     "filters": "Filtros",
-    "name": "Name",
+    "name": "Nombre",
     "nested": {
-      "joscode": "Hey! i'm Josué Ayala"
+      "joscode": "¡Hola! soy Josué Ayala"
     },
     "night": "Noche"
   },

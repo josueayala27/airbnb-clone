@@ -22,6 +22,7 @@ export default defineNuxtConfig({
   i18n: {
     locales: ['en', 'es'],
     defaultLocale: 'en',
+    customRoutes: 'config',
     vueI18n: { legacy: false, globalInjection: true, messages: { en, es } }
   }
 })
